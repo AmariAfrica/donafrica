@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_school",
+						"type": "address"
+					}
+				],
+				"name": "isSchoolVerified",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_school",
+						"type": "address"
+					}
+				],
+				"name": "verifySchool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ISchoolVerification.sol": "ISchoolVerification"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ISchoolVerification.sol": {
+			"keccak256": "0x0667186dfa680d333c4f843d7933a13821f0b3b39aa932d6c0e80f554a83a931",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5049ec036a03a7098a888266d4e6bccf0c34e45cf08653a1f704d58b91b118ae",
+				"dweb:/ipfs/QmPHkhXLy6qzkZ6aytBYQDV9ZPGE2Fcr1DPFvzP9BwoeNP"
+			]
+		}
+	},
+	"version": 1
+}
