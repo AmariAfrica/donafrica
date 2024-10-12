@@ -71,7 +71,7 @@ contract DonorAfrica is IDonorRegistration, IFundDistribution, ISchoolVerificati
     }
 
     function distributeFunds() external override {
-        require(block.timestamp >= lastDistribution + 30 days, "Distribution not due");
+        // require(block.timestamp >= lastDistribution + 30 days, "Distribution not due");
         uint256 numSchools = schoolAddresses.length;
         uint256 amountPerSchool = totalDonations / numSchools;
         for (uint256 i = 0; i < numSchools; i++) {
