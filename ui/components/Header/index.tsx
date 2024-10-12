@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import ThemeToggler from "./ThemeToggler";
+import ProfileDropdown from "./profile";
 import menuData from "./menuData";
 
 const Header = () => {
@@ -153,19 +154,20 @@ const Header = () => {
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
             <ThemeToggler />
+            <ProfileDropdown/>
 
-             <Link
+             {/* <Link
               href="/money/donate"
               className="text-regular font-medium text-waterloo hover:text-primary"
             >
               Donate now
-            </Link>
+            </Link> */}
 
             <Link
-              href="https://nextjstemplates.com/templates/solid"
+              href="/money/donate"
               className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
-              Doate Now 🔥
+              Donate Now 🔥
             </Link>
           </div>
         </div>
