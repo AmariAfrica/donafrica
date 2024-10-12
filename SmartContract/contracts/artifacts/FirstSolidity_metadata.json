@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FirstSolidity.sol": "FirstSolidity"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/FirstSolidity.sol": {
+			"keccak256": "0x1f0518aa01441a88040aae19088ba7f9644d5c563bf36ca553a61aa67c6c8119",
+			"urls": [
+				"bzz-raw://8621126e122bc96b430a275404ce874d32c5994e169011c06f6eb724aa129fa9",
+				"dweb:/ipfs/QmPM2PaCo6ebc5myD83qTYejfRpivDrNcAH62s3mtvtwVa"
+			]
+		}
+	},
+	"version": 1
+}

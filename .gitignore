@@ -1,35 +1,35 @@
 # dependencies
-onchain/node_modules
-/.pnp
-.pnp.js
+/onchain/node_modules
+onchain/.pnp
+onchain/.pnp.js
 
 # testing
-/coverage
+onchain/coverage
 
 # next.js
-/.next/
-/out/
+onchain/.next/
+onchain/out/
 
 # production
-/build
+onchain/build
 
 # misc
 .DS_Store
 *.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+onchain/npm-debug.log*
+onchain/yarn-debug.log*
+onchain/yarn-error.log*
 
 # local env files
-.env*.local
+onchain/.env*.local
 
 # vercel
-.vercel
+onchain/.vercel
 
 # typescript
-*.tsbuildinfo
-next-env.d.ts
+onchain/*.tsbuildinfo
+onchain/next-env.d.ts
 
-.env
+onchain/.env
