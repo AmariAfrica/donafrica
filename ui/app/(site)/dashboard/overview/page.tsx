@@ -1,4 +1,6 @@
+import ConnectWallet from "@/components/Money/ConnectWallet";
 import Donation from "@/components/Money/Donation";
+import Wallet from "@/components/Money/Wallet";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +13,8 @@ export default function Register() {
   return (
     <>
       <Donation />
+      <ConnectWallet />
+      {/* <Wallet /> */}
     </>
   );
 }

@@ -168,7 +168,7 @@ const Donation = () => {
               <div className="mb-7.5">
                 <textarea
                   name="message"
-                  rows="4"
+                  rows={4}
                   placeholder="Leave a message (optional)"
                   value={data.message}
                   onChange={(e) =>

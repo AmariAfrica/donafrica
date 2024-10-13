@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const Signup = () => {
+const SignupOrg = () => {
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
+    organisation_name: "",
+    organisation_address: "",
     email: "",
     password: "",
   });
@@ -95,13 +95,14 @@ const Signup = () => {
                 </span>
                 Signup with Google
               </button>
-              <Link 
-              className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
-              
-              href="/auth/signuporg">
 
-                Signup as an Organisation
-              </Link>
+                <Link href="/auth/signup"
+                  aria-label="signup with github"
+                  className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
+                >
+                  Signup as an Individual
+
+                </Link>
             </div>
 
             <div className="mb-10 flex items-center justify-center">
@@ -115,10 +116,10 @@ const Signup = () => {
             <form>
               <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 lg:flex-row lg:justify-between lg:gap-14">
                 <input
-                  name="firstName"
+                  name="organisationName"
                   type="text"
-                  placeholder="First name"
-                  value={data.firstName}
+                  placeholder="Organisation Name"
+                  value={data.organisation_name}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
                   }
@@ -126,10 +127,10 @@ const Signup = () => {
                 />
 
                 <input
-                  name="lastName"
+                  name="organisationAddress"
                   type="text"
-                  placeholder="Last name"
-                  value={data.lastName}
+                  placeholder="Organisation Address"
+                  value={data.organisation_address}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
                   }
@@ -235,4 +236,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupOrg;

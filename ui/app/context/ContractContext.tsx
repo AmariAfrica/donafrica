@@ -36,5 +36,9 @@ export const ContractProvider = ({ children }: { children: React.ReactNode }) =>
 };
 
 export const useContracts = () => {
-  return useContext(ContractContext);
+  const context = useContext(ContractContext);
+  if (!context) {
+    throw new Error("useContracts must be used within a ContractProvider");
+  }
+  return context;
 };
