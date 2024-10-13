@@ -7,14 +7,32 @@ import OnchainkitSvg from 'src/svg/OnchainkitSvg';
 import { useAccount } from 'wagmi';
 import LoginButton from '../components/LoginButton';
 import SignupButton from '../components/SignupButton';
+import RegisterButton from 'src/components/RegisterDonor';
+import { useEffect, useState } from 'react';
+import { donate, registerDonor, registerSchool, registerStudent, claimFunds } from '../utils/contract';
 
 export default function Page() {
   const { address } = useAccount();
 
+  const [amount, setAmount] = useState<string>('');
+  const [schoolAddress, setSchoolAddress] = useState<string>('');
+  const handleDonate = async () => {
+    await donate(amount);
+  };
   return (
     <div className="flex h-full w-96 max-w-full flex-col px-1 md:w-[1008px]">
       <section className="mt-6 mb-6 flex w-full flex-col md:flex-row">
         <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-0">
+          <div>
+            <h2>Donate USDC</h2>
+              <input
+                type="text"
+                placeholder="Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
+            <button onClick={handleDonate}>Donate</button>
+          </div>
           <a
             href={ONCHAINKIT_LINK}
             title="onchainkit"
@@ -23,6 +41,10 @@ export default function Page() {
           >
             <OnchainkitSvg />
           </a>
+          <div className="flex items-center gap-3">
+            <RegisterButton />
+           
+          </div>
           <div className="flex items-center gap-3">
             <SignupButton />
             {!address && <LoginButton />}
@@ -33,7 +55,7 @@ export default function Page() {
         <div className="flex h-[450px] w-[450px] max-w-full items-center justify-center rounded-xl bg-[#030712]">
           <div className="rounded-xl bg-[#F3F4F6] px-4 py-[11px]">
             <p className="font-normal text-indigo-600 text-xl not-italic tracking-[-1.2px]">
-              npm install @coinbase/onchainkit
+              DonaAfrica
             </p>
           </div>
         </div>
