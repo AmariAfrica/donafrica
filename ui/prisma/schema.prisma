@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("file:./dev.db")
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  password       String
+  name           String
+  role           Role     @default(INDIVIDUAL)
+  documents      String[] // Array to store paths to uploaded files
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Optional fields specific to institutions
+  institutionName String?  // Only for institutions
+  contactPerson   String?  // Only for institutions
+}
+
+enum Role {
+  INDIVIDUAL
+  INSTITUTION
+}
+model User {
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  password       String
+  name           String
+  role           String   @default("INDIVIDUAL") // Use String instead of enum
+  documents      String   // Comma-separated paths
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  institutionName String?  // Only for institutions
+  contactPerson   String?  // Only for institutions
+}
