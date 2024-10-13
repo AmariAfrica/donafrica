@@ -94,15 +94,6 @@ contract DonorAfrica is IDonorRegistration, IFundDistribution, ISchoolVerificati
 
 
 
-/**  The interface takes a parameter, this one does not. So its replaced with the one below 
-    
-    
-    function getMonth() external view returns (uint256) {
-        return (block.timestamp / 30 days) % 12 + 1;
-    }
-
-
-*/
 
     function getMonth(uint256 _timestamp) external pure override returns (uint256) {
         return (_timestamp / 30 days) % 12 + 1;
