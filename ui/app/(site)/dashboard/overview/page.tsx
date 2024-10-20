@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 export default function Register() {
   return (
     <>
-      <Donation />
-      <ConnectWallet />
+    
+    <Donation />
+    <ConnectWallet />
       {/* <Wallet /> */}
     </>
   );

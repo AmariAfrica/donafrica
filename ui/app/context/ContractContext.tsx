@@ -8,12 +8,17 @@ interface ContractContextType {
 }
 const ContractContext = createContext<ContractContextType | null>(null);
 
-
+interface DonorAfricaContract extends ethers.Contract {
+  distributeFunds: () => Promise<ethers.ContractTransaction>;
+  getBalance(): ()=> Promise<ethers.BigNumber>;
+  donate(amount: ethers.BigNumber): Promise<ethers.ContractTransaction>;
+  withdraw(amount: ethers.BigNumber): Promise<ethers.ContractTransaction>;
+}
 
 export const ContractProvider = ({ children }: { children: React.ReactNode }) => {
   const [usdcContract, setUsdcContract] = useState<ethers.Contract | null>(null);
   const [donorAfricaContract, setDonorAfricaContract] = useState<ethers.Contract | null>(null);
-
+  // const donorAfricaContract = new ethers.Contract(donorAfricaAddress, DonorAfricaABI.abi, signer) as DonorAfricaContract;
   useEffect(() => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();

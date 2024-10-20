@@ -48,6 +48,9 @@ contract DonorAfrica is IDonorRegistration, IFundDistribution, ISchoolVerificati
     event FundsDistributed(uint256 totalAmount, uint256 numSchools);
     event FundsWithdrawn(address student, uint256 amount);
 
+    function getBalance() external view returns (uint256) {
+        return usdcToken.balanceOf(address(this));
+    }
     // Donor Registration Functions
     function registerDonor() external override {
         require(!donors[msg.sender].isRegistered, "Donor already registered");
@@ -76,6 +79,7 @@ contract DonorAfrica is IDonorRegistration, IFundDistribution, ISchoolVerificati
         uint256 amountPerSchool = totalDonations / numSchools;
         for (uint256 i = 0; i < numSchools; i++) {
             address schoolAddress = schoolAddresses[i];
+            require(usdcToken.transfer(schoolAddress, amountPerSchool), "Transfer failed");
             schools[schoolAddress].totalFundsReceived += amountPerSchool;
         }
         lastDistribution = block.timestamp;
@@ -88,6 +92,7 @@ contract DonorAfrica is IDonorRegistration, IFundDistribution, ISchoolVerificati
         address school = students[msg.sender].school;
         require(schools[school].isVerified, "School not verified");
         uint256 amount = 100; // Assume a fixed amount for simplicity
+        require(usdcToken.transfer(msg.sender, amount), "Transfer failed");
         students[msg.sender].fundsClaimed += amount;
         emit FundsWithdrawn(msg.sender, amount);
     }

@@ -26,24 +26,25 @@ const ConnectWallet = () => {
   };
 
   return (
-    <div className="card">
-      <div className="card-body">
-        {!isConnected ? (
-          <>
-            <h5 className="card-title">Connect to MetaMask</h5>
-            <button className="btn btn-primary" onClick={connectWallet}>
-              Connect Wallet
-            </button>
-          </>
-        ) : (
-          <>
-            <h5 className="card-title">Wallet Connected</h5>
-            <p className="card-text">Address: {walletAddress}</p>
-              <Wallet />
-          </>
-        )}
-      </div>
-    </div>
+    <div className="bg-white md:p-2 p-6 rounded-lg border border-gray-200 mb-4 lg:mb-0 shadow-md lg:w-[35%]">
+                <div className="flex justify-center items-center space-x-5 h-full">
+                    { !isConnected ? (
+                    <>
+                        <h4>Connect to MetaMask</h4>
+                        <button className="border-transparent bg-primary px-7.5 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-opacity-90 dark:hover:bg-opacity-90"
+                         onClick={connectWallet}>
+                          Connect Wallet
+                        </button>
+                    </>
+                    ) : (
+                    <>
+                        <h4>Wallet Connected</h4>
+                        <p>Address: {walletAddress}</p>
+                        <Wallet />
+                    </>
+                    )}
+                </div>
+            </div>
   );
 };
 
